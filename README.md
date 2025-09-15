@@ -2,9 +2,9 @@
 
 # Pemrograman Web Framework
 
-## Praktikum 1
+## Praktikum 2
 
-Pada Praktikum 1, materi yang dipelajari meliputi **ROUTES** dan Blade Template.
+Pada Praktikum 2, materi yang dipelajari meliputi **ROUTES** dan Blade Template.
 
 ### Lokasi File Praktikum
 
@@ -18,8 +18,8 @@ Pada Praktikum 1, materi yang dipelajari meliputi **ROUTES** dan Blade Template.
 > Untuk melihat kode dan tugas Praktikum 1, juga dapat mengakses branch `pertemuan-1` pada repository ini atau di branch main dengan directory yang sesuai.
 
 
-## Praktikum 2
-Pada Praktikum 2, materi yang dipelajari meliputi **migrations**, **.env** dan menginstall **laravel/breeze**.
+## Praktikum 3
+Pada Praktikum 3, materi yang dipelajari meliputi **migrations**, **.env** dan menginstall **laravel/breeze**.
 
 ### Lokasi File Praktikum
 
@@ -29,3 +29,18 @@ Pada Praktikum 2, materi yang dipelajari meliputi **migrations**, **.env** dan m
 ### Lokasi Tugas Praktikum
 - Folder: `database/migrations/**`
 - Folder: `database/migrations/2025_09_15_113242_create_category.php`
+- Folder: `resources/views/auth/login.blade.php`
+
+migrate database
+```bash 
+php artisan migrate
+```
+
+seed database
+```bash
+php artisan db:seed
+```
+
+#### login
+email: **test@example.com** \
+password: **password**

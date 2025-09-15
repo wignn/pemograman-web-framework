@@ -1,8 +1,16 @@
+
 <x-guest-layout>
+    <!-- Custom Login Header -->
+    <div class="flex flex-col items-center mb-6">
+        <img src="/images/user.jpg" alt="Logo" class="w-20 h-20 rounded-full shadow-lg mb-2">
+        <h1 class="text-2xl font-bold text-indigo-700 mb-1">Selamat Datang di Sistem Login!</h1>
+        <p class="text-gray-600">Silakan masuk untuk melanjutkan.</p>
+    </div>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" class=" p-6 rounded shadow-md">
         @csrf
 
         <!-- Email Address -->
@@ -15,12 +23,10 @@
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
-
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"
                             name="password"
                             required autocomplete="current-password" />
-
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 

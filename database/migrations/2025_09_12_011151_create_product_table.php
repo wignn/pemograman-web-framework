@@ -15,12 +15,9 @@ return new class extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
             $table->string('name');
             $table->float('price');
             $table->string('description');
-
-
             $table->integer('category_id');
             $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
         });
