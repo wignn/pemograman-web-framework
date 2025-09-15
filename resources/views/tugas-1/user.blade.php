@@ -74,13 +74,13 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Foto profil bisa diganti sesuai user -->
-    <img src="{{ asset('images/user.jpg') }}" alt="Profile" class="profile-img">
-    <p class="welcome-text">Selamat datang, User 👋</p>
+    <div class="container">
+        <!-- Foto profil bisa diganti sesuai user -->
+        <img src="{{ asset('images/user.jpg') }}" alt="Profile" class="profile-img">
+        <p class="welcome-text">Selamat datang, {{ $name ?? 'User' }} 👋</p>
 
-    <a href="{{route('menu')}}" class="btn">Profile</a>
-    <a href="{{url()->previous()}}" class="btn btn-back">Back</a>
-  </div>
+        <a href="{{route('menu')}}" class="btn">Profile</a>
+        <a href="{{url()->previous()}}" class="btn btn-back">Back</a>
+    </div>
 </body>
 </html>
