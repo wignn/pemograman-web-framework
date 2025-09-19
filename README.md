@@ -44,3 +44,12 @@ php artisan db:seed
 #### login
 email: **test@example.com** \
 password: **password**
+
+
+### Praktikum 4
+Pada Praktikum 3, materi yang dipelajari meliputi **middlerware** dan menginstall **controller**. 
+
+### Lokasi File Praktikum
+- Folder: `app/controllers/ProductController.php`
+- Folder: `resources/views/`
+- Folder: ``

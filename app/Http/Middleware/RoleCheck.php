@@ -17,6 +17,12 @@ class RoleCheck
      */
     public function handle(Request $request, Closure $next, ...$roles): Response
     {
+        // Console log untuk debugging - akan muncul di terminal
+        error_log('Request URL: ' . $request->url());
+        error_log('Request Method: ' . $request->method());
+        error_log('User Role: ' . (Auth::check() ? Auth::user()->role : 'Not logged in'));
+        error_log('Required Roles: ' . implode(', ', $roles));
+        
         // Jika user tidak login, redirect ke login
         if (!Auth::check()) {
             return redirect()->route('login');
@@ -37,6 +43,7 @@ class RoleCheck
         }
         
         // Jika tidak memiliki akses yang sesuai, jangan logout
+        Auth::logout();
         return redirect()->route('dashboard')->with('error', 'You are not authorized to access this page.');
     }
 }
