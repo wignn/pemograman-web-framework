@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,7 +11,7 @@ Route::get('/', function () {
 });
 
 
-//pertemuab 1
+//pertemuab 2
 Route::get('/about', function () {
     return view('about');
 });
@@ -19,7 +20,13 @@ Route::get('/contact', function () {
     return 'ini contact';
 })->name('contact');
 
+// Route::get('login', function() {
+//     return view('auth.login');
+// });
 
+Route::get('/rahasia', function() {
+    return 'Ini Hallaman rahasia';
+})->middleware('role');
 
 Route::get('/hallo', function () {
     return 'hello world';
@@ -42,7 +49,7 @@ Route::prefix('manage')->group(function () {
     });
 });
 
-// tugas 1
+// tugas pertemuan 2
 
 
 Route::prefix('tugas1')->group(function () {
@@ -56,10 +63,10 @@ Route::prefix('tugas1')->group(function () {
 });
 
 
-//pertemuan 2
+//pertemuan 3
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified', 'role:admin'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -67,6 +74,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::get('product', [ProductController::class, 'index']);
+
 require __DIR__.'/auth.php';
 
-//tugas 2
+
