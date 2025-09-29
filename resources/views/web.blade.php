@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<a>
-    Uts 
-</a>
-
+<h1>Menu uts pemrograman web</h1>
 @endsection

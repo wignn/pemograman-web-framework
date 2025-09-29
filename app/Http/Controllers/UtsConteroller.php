@@ -12,4 +12,12 @@ class UtsConteroller extends Controller
     function uts4() {
         return view('layouts.app');
     }
+
+    function MenuWeb() {
+        return view('web');
+    }
+
+    function MenuDatabase() {
+        return view('database');
+    }
 }
