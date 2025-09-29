@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UtsConteroller;
 use Illuminate\Support\Facades\Route;
 
 
@@ -83,6 +84,9 @@ Route::get('product-count/{id}', [ProductController::class, 'showBarang']);
 Route::get('uts', function() {
     return view('uts');
 })->name('uts');
+
+//uts: jawaban no 3
+Route::get('uts3', [UtsConteroller::class, 'index'])->name('uts3');
 
 require __DIR__.'/auth.php';
 
