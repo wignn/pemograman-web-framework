@@ -74,8 +74,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
 Route::get('product', [ProductController::class, 'index']);
+
+Route::get('product-count/{id}', [ProductController::class, 'showBarang']);
+
+
+//uts: jawaban no 1
+Route::get('uts', function() {
+    return view('uts');
+})->name('uts');
 
 require __DIR__.'/auth.php';
 
