@@ -88,6 +88,9 @@ Route::get('uts', function() {
 //uts: jawaban no 3
 Route::get('uts3', [UtsConteroller::class, 'index'])->name('uts3');
 
+//uts: jawaban no 4
+Route::get('uts4', [UtsConteroller::class, 'uts4'])->name('uts4');
+
 require __DIR__.'/auth.php';
 
 
