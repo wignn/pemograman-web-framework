@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UtsConteroller;
 use Illuminate\Support\Facades\Route;
 
 
@@ -74,8 +75,26 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
 Route::get('product', [ProductController::class, 'index']);
+
+Route::get('product-count/{id}', [ProductController::class, 'showBarang']);
+
+
+//uts: jawaban no 1
+Route::get('uts', function() {
+    return view('uts');
+})->name('uts');
+
+//uts: jawaban no 3
+Route::get('uts3', [UtsConteroller::class, 'index'])->name('uts3');
+
+//uts: jawaban no 4
+Route::get('uts4', [UtsConteroller::class, 'uts4'])->name('uts4');
+
+Route::prefix('/uts5')->group(function(){
+    Route::get('/web', [UtsConteroller::class, 'MenuWeb'])->name('menuWeb');
+    Route::get('/database', [UtsConteroller::class, 'MenuDatabase'])->name('menuDatabase');
+});
 
 require __DIR__.'/auth.php';
 

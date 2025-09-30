@@ -47,9 +47,12 @@ password: **password**
 
 
 ### Praktikum 4
-Pada Praktikum 3, materi yang dipelajari meliputi **middlerware** dan menginstall **controller**. 
+Pada Praktikum 4, materi yang dipelajari meliputi **middlerware** dan menginstall **controller**. 
 
 ### Lokasi File Praktikum
 - Folder: `app/controllers/ProductController.php`
 - Folder: `resources/views/`
 - Folder: ``
+
+### Praktikum 5
+pada praktikun 5, materi yang di pelajari meliputi **passing param dari route ke controller lalu ke blade template**
