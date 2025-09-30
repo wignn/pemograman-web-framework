@@ -8,7 +8,7 @@
     @include('layouts.header')
 
     <main>
-        @yield('content')
+        @yield('unsika')
     </main>
 
     @include('layouts.footer')

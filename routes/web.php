@@ -92,8 +92,8 @@ Route::get('uts3', [UtsConteroller::class, 'index'])->name('uts3');
 Route::get('uts4', [UtsConteroller::class, 'uts4'])->name('uts4');
 
 Route::prefix('/uts5')->group(function(){
-    Route::get('/web', [UtsConteroller::class, 'MenuWeb']);
-    Route::get('/database', [UtsConteroller::class, 'MenuDatabase']);
+    Route::get('/web', [UtsConteroller::class, 'MenuWeb'])->name('menuWeb');
+    Route::get('/database', [UtsConteroller::class, 'MenuDatabase'])->name('menuDatabase');
 });
 
 require __DIR__.'/auth.php';
