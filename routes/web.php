@@ -75,9 +75,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('product', [ProductController::class, 'index']);
+// Route::get('product', [ProductController::class, 'index']);
 
-Route::get('product-count/{id}', [ProductController::class, 'showBarang']);
+// Route::get('product-count/{id}', [ProductController::class, 'showBarang']);
 
 
 //uts: jawaban no 1
@@ -95,6 +95,9 @@ Route::prefix('/uts5')->group(function(){
     Route::get('/web', [UtsConteroller::class, 'MenuWeb'])->name('menuWeb');
     Route::get('/database', [UtsConteroller::class, 'MenuDatabase'])->name('menuDatabase');
 });
+
+Route::get('/product/create', [ProductController::class, 'create'])->name('product-create');
+Route::post('/product', [ProductController::class, 'store'])->name('product-store');
 
 require __DIR__.'/auth.php';
 
