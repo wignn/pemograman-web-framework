@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -31,7 +31,7 @@ class ProductController extends Controller
             'producer'=> 'required | string | max:255'
         ]);
 
-        Product::created($validasi_data);
+        Products::create($validasi_data);
         return redirect()->back()->with('success', 'product created successfully');
     }
 }
